@@ -1,7 +1,9 @@
-package by.it_academy.web_page_testing.ui.pages;
+package by.it_academy.web_page_testing.ui.steps;
 
-public class StepLoginPage extends LoginPage{
-    public StepLoginPage(){
+import by.it_academy.web_page_testing.ui.pages.LoginPage;
+
+public class LoginStep extends LoginPage{
+    public LoginStep(){
         super();
     }
 

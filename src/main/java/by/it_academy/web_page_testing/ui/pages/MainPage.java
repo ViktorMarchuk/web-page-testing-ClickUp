@@ -11,7 +11,7 @@ public class MainPage extends BasePage{
 
 
     @FindBy(xpath = "//div[@data-test='table-placeholder_lv-empty_btn']")
-    private WebElement nameButtonCreateList;
+    private WebElement nameFieldCreateList;
     @FindBy(xpath = "//div[@data-test='simple-bar__item-label']")
     private WebElement nameHome;
     @FindBy(xpath = "//h2[@class='cu-inbox-top-tasks__subheader-title']")
@@ -23,7 +23,7 @@ public class MainPage extends BasePage{
 
 
     public String getTextFromButtonCreateList(){
-        return nameButtonCreateList.getText();
+        return nameFieldCreateList.getText();
     }
 
     public String getTextFromNameHome(){

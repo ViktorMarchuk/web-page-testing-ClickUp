@@ -1,6 +1,8 @@
 package by.it_academy.web_page_testing.ui.pages;
 
+import by.it_academy.web_page_testing.ui.domain.User;
 import by.it_academy.web_page_testing.ui.driver.DriverSingleton;
+import by.it_academy.web_page_testing.ui.util.GeneratingPasswordRandomWay;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,9 +13,9 @@ public class LoginPage extends BasePage{
     public final String PASSWORD_REQUIRED = "Password required!";
     public final String INVALID_PASSWORD = "356K";
     public final String INVALID_EMAIL = "viktor.marchuk0207@gmail";
-    public final String CORRECT_EMAIL = "viktor.marchuk0207@gmail.com";
-    public final String CORRECT_PASSWORD = "02071977Vm";
-    public final String INCORRECT_PASSWORD = "3445566798";
+    private final int VALID_NUMBERS_OF_CHARACTERS = 8;
+    public final String INCORRECT_PASSWORD = GeneratingPasswordRandomWay.getPassword(VALID_NUMBERS_OF_CHARACTERS);
+
     public final String INCORRECT_EMAIL = "marchuk@tgl.by";
     public final String NO_ACCOUNT_FOR_THIS_MAIL = "No account for this email";
     public final String PASSWORD_MUST_BE_8_CHARACTERS_OR_LONGER = "Password must be 8 characters or longer!";
@@ -62,11 +64,11 @@ public class LoginPage extends BasePage{
     }
 
     public void inputCorrectEmail(){
-        fieldEnterEmail.sendKeys(CORRECT_EMAIL);
+        fieldEnterEmail.sendKeys(User.CORRECT_EMAIL);
     }
 
     public void inputCorrectPassword(){
-        fieldEnterPassword.sendKeys(CORRECT_PASSWORD);
+        fieldEnterPassword.sendKeys(User.CORRECT_PASSWORD);
     }
 
     public void inputIncorrectEmail(){
@@ -104,4 +106,5 @@ public class LoginPage extends BasePage{
     public String getTextInvalidPassword(){
         return nameInvalidPassword.getText();
     }
+
 }
