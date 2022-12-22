@@ -64,4 +64,12 @@ public class LoginStep extends LoginPage{
         clickButtonLogInOnLoginPage();
         getTextInvalidPassword();
     }
+    public void actionWithCorrectEmailAndCorrectPassword(){
+        sameActionOnPage();
+        inputCorrectEmail();
+        inputCorrectPassword();
+        clickButtonLogInOnLoginPage();
+        getTextNameClickUpOnMainPage();
+
+    }
 }

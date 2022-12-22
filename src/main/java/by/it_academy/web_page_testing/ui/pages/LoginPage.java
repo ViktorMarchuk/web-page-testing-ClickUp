@@ -15,6 +15,7 @@ public class LoginPage extends BasePage{
     public final String INVALID_EMAIL = "viktor.marchuk0207@gmail";
     private final int VALID_NUMBERS_OF_CHARACTERS = 8;
     public final String INCORRECT_PASSWORD = GeneratingPasswordRandomWay.getPassword(VALID_NUMBERS_OF_CHARACTERS);
+    public final String HOME ="Home";
 
     public final String INCORRECT_EMAIL = "marchuk@tgl.by";
     public final String NO_ACCOUNT_FOR_THIS_MAIL = "No account for this email";
@@ -42,6 +43,8 @@ public class LoginPage extends BasePage{
     private WebElement nameNoAccountForThisEmail;
     @FindBy(xpath = "//p[@id='cu-login-form__error_password']/span[2]")
     private WebElement nameInvalidPassword;
+    @FindBy(xpath = "//div[@data-test='simple-bar__item-label']")
+    private WebElement nameHomeOnMainPage;
 
     public LoginPage(){
         driver = DriverSingleton.getDriver();
@@ -105,6 +108,9 @@ public class LoginPage extends BasePage{
 
     public String getTextInvalidPassword(){
         return nameInvalidPassword.getText();
+    }
+    public String getTextNameClickUpOnMainPage(){
+        return nameHomeOnMainPage.getText();
     }
 
 }
