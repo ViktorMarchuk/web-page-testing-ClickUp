@@ -1,8 +1,6 @@
 package by.it_academy.web_page_testing.ui.pages;
 
-import by.it_academy.web_page_testing.ui.domain.User;
 import by.it_academy.web_page_testing.ui.driver.DriverSingleton;
-import by.it_academy.web_page_testing.ui.util.GeneratingPasswordRandomWay;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
@@ -11,13 +9,7 @@ public class LoginPage extends BasePage{
     public final String INCORRECT_PASSWORD_FOR_THIS_EMAIL = "Incorrect password for this email.";
     public final String EMAIL_REQUIRED = "Email required!";
     public final String PASSWORD_REQUIRED = "Password required!";
-    public final String INVALID_PASSWORD = "356K";
-    public final String INVALID_EMAIL = "viktor.marchuk0207@gmail";
-    private final int VALID_NUMBERS_OF_CHARACTERS = 8;
-    public final String INCORRECT_PASSWORD = GeneratingPasswordRandomWay.getPassword(VALID_NUMBERS_OF_CHARACTERS);
-    public final String HOME ="Home";
-
-    public final String INCORRECT_EMAIL = "marchuk@tgl.by";
+    public final String HOME = "Home";
     public final String NO_ACCOUNT_FOR_THIS_MAIL = "No account for this email";
     public final String PASSWORD_MUST_BE_8_CHARACTERS_OR_LONGER = "Password must be 8 characters or longer!";
 
@@ -25,9 +17,9 @@ public class LoginPage extends BasePage{
     private WebElement incorrectPasswordForThisEmail;
     @FindBy(xpath = "//div[@class='navigation__auth-button-group']/a")
     private WebElement buttonLogInOnStartPage;
-    @FindBy(xpath = "//input[@id='login-email-input']")
+    @FindBy(id = "login-email-input")
     private WebElement fieldEnterEmail;
-    @FindBy(xpath = "//input[@id='login-password-input']")
+    @FindBy(id = "login-password-input")
     private WebElement fieldEnterPassword;
     @FindBy(xpath = "//button[@type='submit']")
     private WebElement buttonLogInOnLoginPage;
@@ -46,6 +38,7 @@ public class LoginPage extends BasePage{
     @FindBy(xpath = "//div[@data-test='simple-bar__item-label']")
     private WebElement nameHomeOnMainPage;
 
+
     public LoginPage(){
         driver = DriverSingleton.getDriver();
     }
@@ -58,28 +51,28 @@ public class LoginPage extends BasePage{
         buttonLogInOnLoginPage.click();
     }
 
-    public void inputInvalidEmail(){
-        fieldEnterEmail.sendKeys(INVALID_EMAIL);
+    public void inputInvalidEmail(String invalidEmail){
+        fieldEnterEmail.sendKeys(invalidEmail);
     }
 
-    public void inputIncorrectPassword(){
-        fieldEnterPassword.sendKeys(INCORRECT_PASSWORD);
+    public void inputIncorrectPassword(String incorrectPassword){
+        fieldEnterPassword.sendKeys(incorrectPassword);
     }
 
-    public void inputCorrectEmail(){
-        fieldEnterEmail.sendKeys(User.CORRECT_EMAIL);
+    public void inputCorrectEmail(String correctEmail){
+        fieldEnterEmail.sendKeys(correctEmail);
     }
 
-    public void inputCorrectPassword(){
-        fieldEnterPassword.sendKeys(User.CORRECT_PASSWORD);
+    public void inputCorrectPassword(String correctPassword){
+        fieldEnterPassword.sendKeys(correctPassword);
     }
 
-    public void inputIncorrectEmail(){
-        fieldEnterEmail.sendKeys(INCORRECT_EMAIL);
+    public void inputIncorrectEmail(String incorrectEmail){
+        fieldEnterEmail.sendKeys(incorrectEmail);
     }
 
-    public void inputInvalidPassword(){
-        fieldEnterPassword.sendKeys(INVALID_PASSWORD);
+    public void inputInvalidPassword(String invalidPassword){
+        fieldEnterPassword.sendKeys(invalidPassword);
     }
 
     public String getTextIncorrectPasswordForThisEmail(){
@@ -109,8 +102,8 @@ public class LoginPage extends BasePage{
     public String getTextInvalidPassword(){
         return nameInvalidPassword.getText();
     }
-    public String getTextNameClickUpOnMainPage(){
+
+    public String getTexNameHomeOnMainPage(){
         return nameHomeOnMainPage.getText();
     }
-
 }

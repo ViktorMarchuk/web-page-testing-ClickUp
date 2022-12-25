@@ -2,7 +2,7 @@ package by.it_academy.web_page_testing.ui.util;
 
 import java.util.Random;
 
-public class GeneratingPasswordRandomWay{
+public class RandomGeneratorLettersAndNumbers{
     private static final String ALFANUMERICAL_LIST = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
     private static Random random = new Random();
 

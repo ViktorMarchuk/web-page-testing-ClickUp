@@ -4,7 +4,6 @@ import by.it_academy.web_page_testing.ui.driver.DriverSingleton;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import java.time.Duration;
 
 public  class BasePage{
     public WebDriver driver;
@@ -18,6 +17,5 @@ public  class BasePage{
     public void openPage(String url){
         driver=DriverSingleton.getDriver();
         driver.navigate().to(url);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(8));
     }
 }

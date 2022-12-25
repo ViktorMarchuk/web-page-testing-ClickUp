@@ -7,69 +7,68 @@ public class LoginStep extends LoginPage{
         super();
     }
 
-    public void sameActionOnPage(){
+    public void generalActionOnPage(){
         openPage(BASE_URL);
         clickButtonLogInOnStartPage();
 
     }
 
-    public void actionWithInvalidEmail(){
-        sameActionOnPage();
-        inputInvalidEmail();
+    public void actionWithInvalidEmail(String invalidEmail){
+        generalActionOnPage();
+        inputInvalidEmail(invalidEmail);
         getTextThisEmailIsInvalid();
         clickButtonLogInOnLoginPage();
     }
 
-    public void actionWithCorrectEmailAndIncorrectPassword(){
-        sameActionOnPage();
-        inputCorrectEmail();
-        inputIncorrectPassword();
+    public void actionWithCorrectEmailAndIncorrectPassword(String incorrectPassword, String correctEmail){
+        generalActionOnPage();
+        inputCorrectEmail(correctEmail);
+        inputIncorrectPassword(incorrectPassword);
         clickButtonLogInOnLoginPage();
         getTextIncorrectPasswordForThisEmail();
     }
 
     public void actionWithEmptyEmailAndEmptyPassword(){
-        sameActionOnPage();
+        generalActionOnPage();
         clickButtonLogInOnLoginPage();
         getTextIncorrectEmailAndCorrectPassword();
     }
 
-    public void actionWithIncorrectEmailAndCorrectPassword(){
-        sameActionOnPage();
-        inputIncorrectEmail();
-        inputCorrectPassword();
+    public void actionWithIncorrectEmailAndCorrectPassword(String correctPassword,String incorrectEmail){
+        generalActionOnPage();
+        inputIncorrectEmail(incorrectEmail);
+        inputCorrectPassword(correctPassword);
         clickButtonLogInOnLoginPage();
     }
 
-    public void actionWithEnteredEmailAndEmptyPassword(){
-        sameActionOnPage();
-        inputCorrectEmail();
+    public void actionWithEnteredEmailAndEmptyPassword(String correctEmail){
+        generalActionOnPage();
+        inputCorrectEmail(correctEmail);
         clickButtonLogInOnLoginPage();
         getTextPasswordRequired();
 
     }
 
-    public void actionWithEmptyEmailAndEnteredPassword(){
-        sameActionOnPage();
-        inputCorrectPassword();
+    public void actionWithEmptyEmailAndEnteredPassword(String correctPassword){
+        generalActionOnPage();
+        inputCorrectPassword(correctPassword);
         clickButtonLogInOnLoginPage();
         getTextEmailRequired();
 
     }
 
-    public void actionWithInvalidPassword(){
-        sameActionOnPage();
-        inputCorrectEmail();
-        inputInvalidPassword();
+    public void actionWithInvalidPassword(String invalidPassword,String correctEmail){
+        generalActionOnPage();
+        inputCorrectEmail(correctEmail);
+        inputInvalidPassword(invalidPassword);
         clickButtonLogInOnLoginPage();
         getTextInvalidPassword();
     }
-    public void actionWithCorrectEmailAndCorrectPassword(){
-        sameActionOnPage();
-        inputCorrectEmail();
-        inputCorrectPassword();
+    public void actionWithCorrectEmailAndCorrectPassword(String correctEmail,String correctPassword){
+        generalActionOnPage();
+        inputCorrectEmail(correctEmail);
+        inputCorrectPassword(correctPassword);
         clickButtonLogInOnLoginPage();
-        getTextNameClickUpOnMainPage();
-
+        getTexNameHomeOnMainPage();
     }
 }

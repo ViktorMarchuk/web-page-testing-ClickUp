@@ -1,5 +1,6 @@
 package by.it_academy.web_page_testing.api;
 
+import by.it_academy.web_page_testing.ui.util.RandomGeneratorLettersAndNumbers;
 import io.restassured.http.ContentType;
 import org.testng.annotations.Test;
 
@@ -15,9 +16,10 @@ public class TestingAPI{
         String endPoint = "api/v2/user";
         given()
                 .contentType(ContentType.JSON)
+                .baseUri(url)
                 .header("Authorization", token)
                 .when()
-                .get(url + endPoint)
+                .get(endPoint)
                 .then()
                 .statusCode(200)
                 .log().body()
@@ -28,9 +30,10 @@ public class TestingAPI{
         String endPoint = "api/v2/team";
         given().
                 contentType(ContentType.JSON)
+                .baseUri(url)
                 .header("Authorization", token)
                 .when()
-                .get(url + endPoint)
+                .get(endPoint)
                 .then()
                 .statusCode(200)
                 .log().body()
@@ -45,11 +48,12 @@ public class TestingAPI{
         String requestBody = String.format("{\"team_id\":\"%s\",\"page\":\"%s\"}", team_id, page);
         given()
                 .contentType(ContentType.JSON)
+                .baseUri(url)
                 .header("Authorization", token)
                 .and()
                 .body(requestBody)
                 .when()
-                .get(url + endPoint)
+                .get(endPoint)
                 .then()
                 .statusCode(200)
                 .log().body();
@@ -59,9 +63,10 @@ public class TestingAPI{
         String endPoint = "api/v2/team/43292335/space?archived=false";
         given()
                 .contentType(ContentType.JSON)
+                .baseUri(url)
                 .header("Authorization", token)
                 .when()
-                .get(url + endPoint)
+                .get(endPoint)
                 .then()
                 .statusCode(200)
                 .log().body()
@@ -73,25 +78,28 @@ public class TestingAPI{
         String endPoint = "api/v2/space/67234496";
         given()
                 .contentType(ContentType.JSON)
+                .baseUri(url)
                 .header("Authorization", token)
                 .when()
-                .delete(url + endPoint)
+                .delete(endPoint)
                 .then()
                 .statusCode(200)
                 .log().body();
     }
 
     public void testRequestCreateFolder(){
+        int numberOfCharactersForName = 5;
         String enPoint = "api/v2/space/67234496/folder";
-        String name = "WTO";
+        String name = RandomGeneratorLettersAndNumbers.getPassword(numberOfCharactersForName);
         String requestBody = String.format("{\"name\":\"%s\"}", name);
         given()
                 .contentType(ContentType.JSON)
+                .baseUri(url)
                 .header("Authorization", token)
                 .and()
                 .body(requestBody)
                 .when()
-                .post("https://api.clickup.com/api/v2/space/67234496/folder")
+                .post(enPoint)
                 .then()
                 .statusCode(200)
                 .log().body();

@@ -10,32 +10,32 @@ public class MainStep extends MainPage{
         super();
     }
 
-    public void sameActionOnPage(){
+    public void generalActionOnPage(String correctEmail, String correctPassword){
         openPage(BASE_URL);
         loginPage.clickButtonLogInOnStartPage();
-        loginPage.inputCorrectEmail();
-        loginPage.inputCorrectPassword();
+        loginPage.inputCorrectEmail(correctEmail);
+        loginPage.inputCorrectPassword(correctPassword);
         loginPage.clickButtonLogInOnLoginPage();
     }
 
-    public void actionWithButtonCreateList(){
-        sameActionOnPage();
+    public void actionWithButtonCreateList(String correctEmail, String correctPassword){
+        generalActionOnPage(correctEmail,correctPassword);
         getTextFromButtonCreateList();
     }
 
-    public void actionWithNameHome(){
-        sameActionOnPage();
+    public void actionWithNameHome(String correctEmail, String correctPassword){
+        generalActionOnPage(correctEmail,correctPassword);
         getTextFromNameHome();
     }
 
-    public void actionWithNameTrendingAfterClickNameHome(){
-        sameActionOnPage();
+    public void actionWithNameTrendingAfterClickNameHome(String correctEmail,String correctPassword){
+        generalActionOnPage(correctEmail,correctPassword);
         clickButtonHome();
         getTextNameTrendingAfterClickNameHome();
     }
 
-    public void actionWithWindowInvitePeopleAfterClickFieldInvite(){
-        sameActionOnPage();
+    public void actionWithWindowInvitePeopleAfterClickFieldInvite(String correctEmail,String correctPassword){
+        generalActionOnPage(correctEmail,correctPassword);
         clickFieldInvite();
         getTextFromNameInvitePeople();
     }
