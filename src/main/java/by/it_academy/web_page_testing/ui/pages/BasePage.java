@@ -2,7 +2,12 @@ package by.it_academy.web_page_testing.ui.pages;
 
 import by.it_academy.web_page_testing.ui.driver.DriverSingleton;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 
 public  class BasePage{
@@ -17,5 +22,9 @@ public  class BasePage{
     public void openPage(String url){
         driver=DriverSingleton.getDriver();
         driver.navigate().to(url);
+    }
+    public void getExplicitlyWaiter(WebElement element){
+        WebElement result = new WebDriverWait(driver, Duration.ofSeconds(10))
+                .until(ExpectedConditions.visibilityOf(element));
     }
 }

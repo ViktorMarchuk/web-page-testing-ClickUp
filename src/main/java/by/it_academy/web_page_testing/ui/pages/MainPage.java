@@ -21,6 +21,21 @@ public class MainPage extends BasePage{
     @FindBy(xpath = "//div[@data-test='modal__dialog']/div[2]/cu-invite-modal/div/div[1]/div[1]")
     private WebElement nameInvitePeople;
 
+    public WebElement getNameTrendingAfterClickNameHome(){
+        return nameTrendingAfterClickNameHome;
+    }
+
+    public WebElement getNameInvitePeople(){
+        return nameInvitePeople;
+    }
+
+    public WebElement getNameFieldCreateList(){
+        return nameFieldCreateList;
+    }
+
+    public WebElement getNameHome(){
+        return nameHome;
+    }
 
     public String getTextFromButtonCreateList(){
         return nameFieldCreateList.getText();

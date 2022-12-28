@@ -39,6 +39,7 @@ public class LoginStep extends LoginPage{
         inputIncorrectEmail(incorrectEmail);
         inputCorrectPassword(correctPassword);
         clickButtonLogInOnLoginPage();
+        getExplicitlyWaiter(getNameNoAccountForThisEmail());
     }
 
     public void actionWithEnteredEmailAndEmptyPassword(String correctEmail){
