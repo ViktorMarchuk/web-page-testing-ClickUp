@@ -24,7 +24,7 @@ public  class BasePage{
         driver.navigate().to(url);
     }
     public void getExplicitlyWaiter(WebElement element){
-        WebElement result = new WebDriverWait(driver, Duration.ofSeconds(10))
+        WebElement result = new WebDriverWait(driver, Duration.ofSeconds(12))
                 .until(ExpectedConditions.visibilityOf(element));
     }
 }
