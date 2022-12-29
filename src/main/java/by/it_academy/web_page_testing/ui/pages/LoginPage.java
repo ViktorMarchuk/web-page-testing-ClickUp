@@ -38,8 +38,13 @@ public class LoginPage extends BasePage{
     @FindBy(xpath = "//div[@data-test='simple-bar__item-label']")
     private WebElement nameHomeOnMainPage;
 
+    public WebElement getNameHomeOnMainPage(){
+        return nameHomeOnMainPage;
+    }
+
     public WebElement getNameNoAccountForThisEmail(){
         return nameNoAccountForThisEmail;
+
     }
 
     public LoginPage(){

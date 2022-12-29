@@ -71,7 +71,7 @@ public class TestLoginPage extends BaseTest{
     }
 
     @Test
-    public void testValidEmailAndValidPassword(){
+    public void testCorrectEmailAndCorrectPassword(){
         LoginStep loginStep = new LoginStep();
         loginStep.actionWithCorrectEmailAndCorrectPassword(CorrectUserData.CORRECT_EMAIL, CorrectUserData.CORRECT_PASSWORD);
 

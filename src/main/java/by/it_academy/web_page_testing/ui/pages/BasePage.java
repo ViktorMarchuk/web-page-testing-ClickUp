@@ -23,8 +23,8 @@ public  class BasePage{
         driver=DriverSingleton.getDriver();
         driver.navigate().to(url);
     }
-    public void getExplicitlyWaiter(WebElement element){
-        WebElement result = new WebDriverWait(driver, Duration.ofSeconds(12))
+    public void getExplicitlyWaiter(WebElement element, int waitTime){
+        WebElement result = new WebDriverWait(driver, Duration.ofSeconds(waitTime))
                 .until(ExpectedConditions.visibilityOf(element));
     }
 }
