@@ -3,9 +3,6 @@ package by.it_academy.web_page_testing.ui.steps;
 import by.it_academy.web_page_testing.ui.pages.LoginPage;
 
 public class LoginStep extends LoginPage{
-    public LoginStep(){
-        super();
-    }
 
     public void generalActionOnPage(){
         openPage(BASE_URL);
