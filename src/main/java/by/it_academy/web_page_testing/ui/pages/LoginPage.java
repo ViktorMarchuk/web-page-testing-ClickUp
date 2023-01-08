@@ -87,10 +87,6 @@ public class LoginPage extends BasePage{
         return namePasswordRequired.getText();
     }
 
-    public String getTextIncorrectEmailAndCorrectPassword(){
-        return incorrectPasswordForThisEmail.getText();
-    }
-
     public String getTextThisEmailIsInvalid(){
         return nameUnderFieldEmailThisEmailInvalid.getText();
     }

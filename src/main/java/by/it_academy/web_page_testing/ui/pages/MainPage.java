@@ -8,8 +8,6 @@ public class MainPage extends BasePage{
     public final String HOME = "Home";
     public final String TRENDING = "Trending";
     public final String INVITE_PEOPLE = "Invite people";
-
-
     @FindBy(xpath = "//div[@data-test='table-placeholder_lv-empty_btn']")
     private WebElement nameFieldCreateList;
     @FindBy(xpath = "//div[@data-test='simple-bar__item-label']")

@@ -8,9 +8,9 @@
 ### - Java 
 ### - сборщик проекта Maven
 ### - TestNG
-### - PageObject
+### - Page Object
 ### - WebDriverSinglton
-### - PageFabric
+### - Page Faсtory
 ### - REST Assured
 ### - Allure
 ### - Jenkins
