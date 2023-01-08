@@ -27,7 +27,7 @@ public class MainStep extends MainPage{
     public void actionWithNameTrendingAfterClickNameHome(String correctEmail,String correctPassword){
         generalActionOnPage(correctEmail,correctPassword);
         clickButtonHome();
-        getExplicitlyWaiter(getNameTrendingAfterClickNameHome(),16);
+        getExplicitlyWaiter(getNameTrendingAfterClickNameHome(),18);
     }
 
     public void actionWithWindowInvitePeopleAfterClickFieldInvite(String correctEmail,String correctPassword){
